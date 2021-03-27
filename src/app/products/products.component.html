@@ -1,0 +1,39 @@
+<div class="container">
+
+    <!-- <table border="1">
+        <thead>
+            <th>Product Name</th>
+            <th>price</th>
+            <th>Category</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    {{item.price}}
+                </td>
+                <td>
+                    {{item.category}}
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let head of items[0] | keys">{{head}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td *ngFor="let list of item | keys">{{item[list]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <button type="button" class="btn btn-primary" (click)="childButtonClicked()">click the button from child component</button>
+</div>

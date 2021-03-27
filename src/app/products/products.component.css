@@ -1,0 +1,11 @@
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    background-color: chartreuse;
+}
