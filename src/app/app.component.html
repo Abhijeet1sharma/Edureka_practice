@@ -1,6 +1,6 @@
 <div class="container">
     <app-header></app-header>
     <app-login></app-login>
-    <button class="Addproduct-button" (click)="addProducts()">Add a new product</button>
+    <!-- <button class="Addproduct-button" (click)="addProducts()">Add a new product</button> -->
     <app-products [heading]="title" [items]="products" (addEventFromChild)="clickEventFromChild($event)"> </app-products>
 </div>

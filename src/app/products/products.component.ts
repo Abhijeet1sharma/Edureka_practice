@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
+import {ProductService} from '../services/product.service'
 
 
 @Component({
@@ -8,6 +9,7 @@ import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
+  products:any[]
   @Input()
   items:any;
 
@@ -18,8 +20,10 @@ export class ProductsComponent implements OnInit {
   heading:String;
 
 
-  constructor() { 
+  constructor(private _productService:ProductService) { 
     this.addEventFromChild=new EventEmitter()
+    this.products=_productService.getProducts();
+    console.log(this.products)
   }
 
 
