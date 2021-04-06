@@ -1,0 +1,16 @@
+<div class="container">
+    <button (click)="getData()">fetch</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let head of Employee[0] | keys">{{head}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Employee">
+                <td *ngFor="let list of item | keys">{{item[list]}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
