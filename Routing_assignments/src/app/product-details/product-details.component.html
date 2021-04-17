@@ -1,0 +1,15 @@
+<div class="container">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th *ngFor="let head of products[0] | keys ">{{head}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products;index as i">
+                <td *ngFor="let list of product | keys">{{product[list]}}</td>
+                <td> <a [routerLink]="['/product']" [queryParams]="{id:i+1}"><button>Show detail</button></a> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
