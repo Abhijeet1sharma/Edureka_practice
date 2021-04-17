@@ -1,0 +1,55 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th>EmployeeId</th>
+            <th>
+                Firstname
+            </th>
+            <th>LastName</th>
+            <th>Department</th>
+            <th>city</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Employee of Employees">
+                <td>
+                    {{ Employee.id }}
+                </td>
+                <td>
+                    {{Employee.FirstName}}
+                </td>
+                <td>
+                    {{Employee.LastName}}
+                </td>
+                <td>
+                    {{Employee.dept}}
+                </td>
+                <td>
+                    {{Employee.city}}
+                </td>
+                <td>
+                    {{Employee.email}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="Edit()">Edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="update()">update</button>
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngFor="let Employee of Employees">
+    <div class="container" *ngIf="flag">
+        <input type="text" [(ngModel)]="Employee.id">
+        <input type="text" [(ngModel)]="Employee.FirstName" />
+        <input type="text" [(ngModel)]="Employee.LastName" />
+        <input type="text" [(ngModel)]="Employee.dept" />
+        <input type="text" [(ngModel)]="Employee.city" />
+        <input type="text" [(ngModel)]="Employee.email" />
+    </div>
+</div>
