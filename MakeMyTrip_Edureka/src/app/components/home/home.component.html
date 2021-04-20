@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="card signUpForm m-auto" style="width: 500px; float: left; margin-top:10px;">
+        <div class="card-header">Search Buses For Different Routes</div>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+                <div class="form-row row">
+                    <div class="form-group col-6">
+                        <label>Leaving From</label>
+
+                        <!-- <ng-select #sourceSelect [items]="source" [selectOnTab]="true" [clearable]="false" bindValue="id" bindLabel="city_id" labelForId="source_switch_id" formControlName="source_switch_id">
+                        </ng-select> -->
+                        <select formControlName="source" class="form-control" (change)="changeWebsite($event)">
+                            <option>Choose Location</option>
+                            <option *ngFor=" let city of cities ">{{city.city_id}}</option>
+
+                        </select>
+                        <div *ngIf="f.source.touched && f.source.invalid" class="alert alert-danger">
+                            <div *ngIf="f.source.errors.required">Leaving location is required.</div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="form-group col-6 ">
+                        <label>Going To</label>
+                        <select formControlName="dest" class="form-control ">
+                        <option>Choose Location</option>
+                        <option *ngFor="let i of dest">{{i.city_id}}</option>
+                        </select>
+                        <div *ngIf="f.dest.touched && f.dest.invalid" class="alert alert-danger">
+                            <div *ngIf="f.dest.errors.required">Going location is required.</div>
+                        </div>
+
+
+                        <!-- <ng-select #destinationSelect [items]="dest" [selectOnTab]="true" [clearable]="false" bindValue="id" bindLabel="city_id" labelForId="dest_switch_id" formControlName="dest_switch_id" dropdownPosition="bottom">
+                        </ng-select> -->
+                    </div>
+                </div>
+
+
+                <br />
+                <div class="form-row row">
+                    <div class="form-group col">
+                        <label>Departing On</label>
+                        <input type="date" class="form-control" formControlName="dob">
+                    </div>
+
+
+                </div>
+
+                <br />
+
+
+                <br />
+                <div class="text-center">
+                    <button class="btn btn-primary m-2" type="submit" [disabled]="!form.valid">Search Buses</button>
+                    <button class="btn btn-secondary" type="reset">Cancel</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    Online Reservation
+                </div>
+                <div class="card-body">
+                    <table class="table" style="background-color: bisque;">
+                        <thead>
+                            <td class="text-capitalize" style="color: black;">{{src_city}} <span> <i class="fas fa- arrow-right"></i></span> {{dest_city}}</td>
+                            <td> {{departure_date}}</td>
+                            <td></td>
+                        </thead>
+                    </table>
+                    <table class="table ps_details">
+                        <tr>
+                            <th>Passenger Details</th>
+                            <th>Ticket Id</th>
+                            <th>Seat No</th>
+                            <th>Total Fare</th>
+
+                        </tr>
+                        <tr>
+                            <div *ngFor="let user of userInfo">
+                                <td *ngFor="let list of user | keys"><span>{{user[list]}}</span><br></td>
+                                <br>
+                            </div>
+
+
+                            <td>-M2456789ryUE</td>
+                            <td>
+                                <span *ngFor="let s of selectedSeat">{{s}} </span>
+                            </td>
+                            <td>{{Total_fare}} </td>
+                        </tr>
+                    </table>
+                    <table class="table ps_details ">
+                        <tr>
+                            <th>Bus Name</th>
+                            <th>Reporting Time </th>
+                            <th>Departure Time</th>
+
+                        </tr>
+                        <tr>
+                            <td>{{BusDetails['BusName']}} <br>
+                                <span> <em>Coach Type: </em>{{BusDetails['Coach']}} </span>
+                            </td>
+                            <td>Before 30 mints</td>
+                            <td>{{BusDetails['DepartureTime']}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p style="color:red">** Please Bring this copy to ticket counter for collect your ticket </p>
+    </div>
+
+</div>

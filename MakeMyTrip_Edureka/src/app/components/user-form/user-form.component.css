@@ -1,0 +1,15 @@
+.loginForm {
+    margin: 30px 230px;
+}
+
+.container {
+    /* The image used */
+    min-height: 380px;
+    margin-top: 10px;
+    background-image: url("https://i.pinimg.com/originals/94/b9/af/94b9af498999f74b157ff53950c0a900.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

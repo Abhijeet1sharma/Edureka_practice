@@ -1,0 +1,11 @@
+.container {
+    /* The image used */
+    min-height: 380px;
+    margin-top: 10px;
+    background-image: url("https://wallpaperaccess.com/full/1628627.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

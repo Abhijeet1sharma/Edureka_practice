@@ -1,0 +1,11 @@
+.container {
+    /* The image used */
+    min-height: 380px;
+    margin-top: 10px;
+    background-image: url("https://s1.1zoom.me/big0/120/Mercedes-Benz_Bus_2017_Tourismo_537363_1280x853.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

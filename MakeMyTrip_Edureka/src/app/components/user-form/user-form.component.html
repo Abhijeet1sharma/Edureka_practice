@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+    <!-- <div class="alert alert-info" *ngIf="loading">Signing In .....</div> -->
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card loginForm">
+                <div class="card-header">Sign In</div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+                        <div class="form-row row">
+                            <div class="form-group col-12">
+                                <label>UserName</label>
+                                <input type="text" class="form-control" formControlName="UserName" required>
+                                <div *ngIf="submitted && f.UserName.errors && f.UserName.errors.required" class="text-danger">Username is required</div>
+
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-row row">
+                            <div class="form-group col-12">
+                                <label>UserEmail</label>
+                                <input type="email" class="form-control" formControlName="email" required>
+                                <div *ngIf="submitted && f.email.errors && f.email.errors.required" class="text-danger">Email is required</div>
+                                <div *ngIf="submitted && f.email.errors && f.email.errors.email" class="text-danger">Email must be a valid format</div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-row row">
+                            <div class="form-group col-12">
+                                <label>Mobile</label>
+                                <input type="text" class="form-control" formControlName="Mobile" required minlength="10">
+                                <div *ngIf="submitted && f.Mobile.errors && f.Mobile.errors.required" class="text-danger">Mobile number is required</div>
+                                <div *ngIf="submitted && f.Mobile.errors && f.Mobile.errors.minlength" class="text-danger">Mobile must be minimum 10 digits long</div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <button class="btn btn-primary m-2" type="submit">Submit</button>
+                            <button class="btn btn-secondary" type="reset">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="margin-top: 30px;">
+                <div class="card-header">Journey Details</div>
+                <div class="card-body">
+                    <h5>{{Src_city}} to {{Dest_city}}</h5>
+
+                    <h5>On {{date}}</h5>
+                    <div *ngFor="let seat of Selected_seats">
+                        <h5>Seat :-{{seat}}</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

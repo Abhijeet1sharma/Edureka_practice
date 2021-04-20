@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="table table-striped table-dark" style="margin-top: 50px;">
+        <thead>
+            <tr>
+                <th *ngFor="let head of new_bus[0] | keys ">{{head}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of new_bus;index as i">
+                <td *ngFor="let list of product | keys">{{product[list]}}</td>
+                <td><button type="button" (click)="ViewDetail(product)">View Details</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
