@@ -12,14 +12,16 @@
                             <div class="handle">
                                 <img src="../assets/img/handle.png" alt="">
                             </div>
-                            <div class="row">
+                            <div class="row col-md-5">
                                 <ul>
-                                    <li>
-                                        <a (click)="Seat('A1')" id="A1" title="[A1]">
+                                    <span *ngFor="let arr of seats" style="max-width:10px">
+                                    
+                                        <a (click)="Seat(arr)" id={{arr}} title="[arr]">
                                             <img src="../assets/img/bseat.png" alt="">
                                         </a>
-                                    </li>
-                                    <li>
+                                    </span>
+                                </ul>
+                                <!-- <li>
                                         <a (click)="Seat('B1')" id="B1" title="[B1]">
                                             <img src="../assets/img/bseat.png" alt="">
                                         </a>
@@ -115,7 +117,7 @@
 
                                 <ul>
                                     <!-- ROW 3 START -->
-                                    <li>
+                                <!-- <li>
                                         <a title="[A3]" (click)="Seat('A3')" id="A3">
                                             <img src="../assets/img/bseat.png" alt="">
                                         </a>
@@ -160,13 +162,13 @@
                                             <img src="../assets/img/bseat.png" alt="">
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> -->
 
                                 <!-- ROW 3 COMPLETE  -->
 
-                                <ul>
-                                    <!-- ROW 4 START  -->
-                                    <li>
+                                <!-- <ul>
+                                    
+                                    <li >
                                         <a title="[A4]" (click)="Seat('A4')" id="A4">
                                             <img src="../assets/img/bseat.png" alt="">
                                         </a>
@@ -212,7 +214,7 @@
                                             <img src="../assets/img/bseat.png" alt="">
                                         </a>
                                     </li>
-                                </ul>
+                                </ul>  -->
 
                             </div>
 

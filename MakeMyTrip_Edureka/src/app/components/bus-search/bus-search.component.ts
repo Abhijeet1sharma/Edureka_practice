@@ -17,6 +17,7 @@ export class BusSearchComponent implements OnInit {
   new_bus:any[]
   src_city:string
   dest_city:string
+  error_msg:boolean=false
 
   constructor(private router:Router,
     private route:ActivatedRoute,
@@ -25,6 +26,9 @@ export class BusSearchComponent implements OnInit {
       this.new_bus=[]
       
     }
+    public selectedName:any;
+  
+    
 
   ngOnInit(): void {
     this.getData()
@@ -55,6 +59,11 @@ export class BusSearchComponent implements OnInit {
         this.new_bus.push(this.Bus_data[i])
         
       }
+    }
+    if(this.new_bus.length==0)
+    {
+      this.error_msg=true
+
     }
   console.log(this.new_bus)
   }
